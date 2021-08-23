@@ -4,9 +4,7 @@ import { Prompt, Redirect } from "react-router-dom";
 export default function UseEffectDemo(props) {
   const [number, setNumber] = useState(1);
   const [like, setLike] = useState(1);
-  let { history, match } = props;
-  console.log("this.props", props);
-  console.log(match);
+  
 
   //   useEffect(() => {
   //     //callback function chạy sau khi giao diện render
@@ -21,20 +19,28 @@ export default function UseEffectDemo(props) {
   //     console.log("update");
   //   }, []); //Tham số 2 là mảng [] => chạy 1 lần sau render
 
-  useEffect(() => {
-    //Chạy : lần 1 và những lần state(like) thay đổi
+  // useEffect(() => {
+  //   //Chạy : lần 1 và những lần state(like) thay đổi
 
-    console.log("Changed Like");
-  }, [like]); //Chỉ thực hiện khi state(like) thay đổi
+  //   console.log("Changed Like");
+  // }, [like]); //Chỉ thực hiện khi state(like) thay đổi
 
+  // useEffect(() => {
+  //   console.log("didMount");
+  //   return () => {
+  //     //Khi component biến mất khỏi giao diện thì hàm này sẽ kích hoạt
+  //     console.log("will unmount");
+  //   };
+  // }, []);
+  console.log("ahihi")
   useEffect(() => {
-    console.log("didMount");
+    
+
     return () => {
-      //Khi component biến mất khỏi giao diện thì hàm này sẽ kích hoạt
-      console.log("will unmount");
-    };
-  }, []);
-
+     
+    }
+  })
+  
   return (
     <div className="container">
       <h3>UseEffectDemo</h3>

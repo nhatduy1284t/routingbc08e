@@ -1,8 +1,10 @@
+
+  
 import axios from "axios";
 import { TOKEN_CYBERSOFT } from "../../util/settings";
 
 //closure function : connect()()
-export const layDanhSachPhimAction = (maNhom = "GP01") => {
+export const layDanhSachPhimAction = (maNhom) => {
   return (dispatch2) => {
     let promise = axios({
       url: `http://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=${maNhom}`,
@@ -25,3 +27,4 @@ export const layDanhSachPhimAction = (maNhom = "GP01") => {
     });
   };
 };
+

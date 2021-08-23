@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 //Cau hinh redux
 import {Provider} from 'react-redux'
 import { store } from './redux/configStore';
-
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
   <Provider store={store}>

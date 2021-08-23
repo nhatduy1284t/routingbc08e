@@ -17,48 +17,35 @@ import ApiMiddleWare from "./pages/AxiosDemo/ApiMiddleWare";
 import Detail from "./pages/Detail/Detail";
 import Profile from "./pages/Profile/Profile";
 import HOC from "./pages/HOC/HOC";
+import { HomeTemplate } from "./templates/HomeTemplate";
+import { UserTemPlate } from "./templates/UserTemplate";
+import AntDemo from "./pages/AntDemo/AntDemo";
+import { AdminTemplate } from "./templates/AdminTemplate";
 
 function App() {
   return (
     <BrowserRouter>
-    <Header />
       <Switch>
-        <Route
-          exact
-          path="/"
-          render={(propsRoute) => {
-            return (
-              <div>
-                <Header />
-                Đậy
-                <Home {...propsRoute}/>
-              </div>
-            );
-          }}
-        />
-        <Route exact path="/home" render={(propsRoute) => {
-            return (
-              <div>
-                <Header />
-                Đậy
-                <Home {...propsRoute}/>
-              </div>
-            );
-          }} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/usestate" component={UseStateDemo} />
-        <Route exact path="/useeffect" component={UseEffectDemo} />
-        <Route exact path="/reduxhook" component={ReduxHookDemo} />
-        <Route exac path="/ajaxrcc" component={AxiosDemo} />
-        <Route exac path="/ajaxrfc" component={AxiosDemoRFC} />
-        <Route exac path="/apimiddleware" component={ApiMiddleWare} />
-        <Route exac path="/apimiddleware" component={ApiMiddleWare} />
-        <Route exac path="/detail/:id" component={Detail} />
-        <Route exac path="/profile" component={Profile} />
-        <Route exac path="/hoc" component={HOC} />
-        <Route exact path="/" component={Home} />
+        <HomeTemplate path="/home" component={Home} />
+        <HomeTemplate path="/about" component={About} />
+        <UserTemPlate path="/login" component={Login} />
+        <UserTemPlate path="/register" component={Register} />
+        <HomeTemplate path="/about" component={About} />
+        <HomeTemplate path="/usestate" component={UseStateDemo} />
+
+        <HomeTemplate path="/useeffect" component={UseEffectDemo} />
+        <HomeTemplate path="/reduxhook" component={ReduxHookDemo} />
+        <HomeTemplate path="/ajaxrcc" component={AxiosDemo} />
+        
+        <HomeTemplate path="/ajaxrfc" component={AxiosDemoRFC} />
+        <HomeTemplate path="/apimiddleware" component={ApiMiddleWare} />
+        <HomeTemplate path="/apimiddleware" component={ApiMiddleWare} />
+        <HomeTemplate path="/detail/:id" component={Detail} />
+        <HomeTemplate path="/profile" component={Profile} />
+        <HomeTemplate path="/hoc" component={HOC} />
+        <AdminTemplate path="/antd" component={AntDemo} />
+        
+        <HomeTemplate path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   );

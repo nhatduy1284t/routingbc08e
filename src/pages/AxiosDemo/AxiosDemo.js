@@ -7,6 +7,7 @@ export default class AxiosDemo extends Component {
     super(props);
     this.state = {
       mangPhim: [],
+      mangDiem: [],
     };
   }
 
@@ -33,8 +34,9 @@ export default class AxiosDemo extends Component {
         TokenCybersoft: TOKEN_CYBERSOFT,
       },
     });
-    await promise.then(result=>console.log(result));
-    console.log("abc")
+    await promise.then((result) => {
+      console.log(result);
+    });
   };
 
   renderPhim = () => {
@@ -52,19 +54,22 @@ export default class AxiosDemo extends Component {
       );
     });
   };
-
+ 
   render() {
+    console.log(this.state.mangDiem);
     return (
       <div className="container">
-        <button onClick={this.getApi}>Lấy danh sách phim</button>
+        {/* <button onClick={this.getApi}>Lấy danh sách phim</button>
         <h3 className="text-center">Danh sách phim</h3>
-        <div className="row">{this.renderPhim()}</div>
+        <div className="row">{this.renderPhim()}</div> */}
+        {this.state.mangDiem}
       </div>
     );
   }
 
   //Component tự động  gọi hàm này sau khi render
   componentDidMount() {
+    
     this.getApi();
   }
 }

@@ -17,7 +17,7 @@ export default function Login(props) {
     if (state.taiKhoan === "cybersoft") {
       props.history.push("/home");
 
-    //   props.history.replace('/home')//Thay đổi trang hiện tại thành trang có path tương ứng 
+      // props.history.replace('/home')//Thay đổi trang hiện tại thành trang có path tương ứng 
     } else {
       alert("Tai khoan hoac mat khau khong dung");
     }
@@ -42,8 +42,13 @@ export default function Login(props) {
         }}>Go back</button>
       </div>
       
-      <Prompt when={state.isSaveForm} message={(location) => {
+      
+      {/* <Prompt when={state.isSaveForm} message={(location) => {
+        // Thẻ này dùng ngăn cản sự kiện thoát
           return('Bạn có chắc muốn rời khỏi trang')
+      }}/> */}
+      <Prompt when={state.isSaveForm} message={(location) => {
+        return '? Muốn rời khỏi trang à '
       }}/>
       
     </form>

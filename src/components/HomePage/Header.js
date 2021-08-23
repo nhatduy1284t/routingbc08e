@@ -64,6 +64,16 @@ export default function Header(props) {
                 activeStyle={{ background: "#ffffff", color: "black" }}
                 activeClassName="active"
                 className="nav-link"
+                to="/antd"
+              >
+                Ant design
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                activeStyle={{ background: "#ffffff", color: "black" }}
+                activeClassName="active"
+                className="nav-link"
                 to="/register"
               >
                 Register
