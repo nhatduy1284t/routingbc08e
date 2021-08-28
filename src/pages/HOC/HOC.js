@@ -5,23 +5,23 @@ import Register from "../Register/Register";
 import Modal from "./Modal";
 
 export default function HOC(props) {
-  const [state, setState] = useState(<Login/>);
-  const dispatch =useDispatch()
-  console.log(<Login/>)
+
+  const dispatch = useDispatch()
+  console.log(<Login />)
   return (
     <div>
       <button
         className="btn btn-danger"
         onClick={() => {
           dispatch({
-            type:'OPEN_LOGIN',
-            Component : <Login/>,
-            handleSubmit:() => {
-            
+            type: 'OPEN_LOGIN',
+            Component: <Login />,
+            handleSubmit: () => {
+
               alert('Xử lý đăng nhập !');
             }
           })
-          setState(<Login/>)
+
         }}
         data-toggle="modal"
         data-target="#modelId"
@@ -31,7 +31,15 @@ export default function HOC(props) {
       <button
         className="btn btn-success"
         onClick={() => {
-          setState(<Register/>)
+          dispatch({
+            type: 'OPEN_LOGIN',
+            Component: <Register />,
+            handleSubmit: () => {
+
+              alert('Xử lý đăng nhập !');
+            }
+          })
+
         }}
         data-toggle="modal"
         data-target="#modelId"
@@ -39,7 +47,7 @@ export default function HOC(props) {
         Register
       </button>
 
-      <Modal  />
+      <Modal />
     </div>
   );
 }

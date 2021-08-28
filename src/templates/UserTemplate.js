@@ -16,7 +16,7 @@ export const UserTemPlate=(props) => {
                     <div className="w-50">
                         <img className="w-100 vh-100" src="https://picsum.photos/200/200" alt="..."/>
                     </div>
-                    <div>
+                    <div className="w-50">
                         <props.component {...propsRoute}/>
                     </div>
                 </div>
