@@ -18,10 +18,10 @@ export default function ApiMiddleWare(props) {
   const renderPhim = () => {
     return mangPhim.map((phim, index) => {
       return (
-        <div className="col-4" key={index}>
-          <div className="card">
-            <img src={phim.hinhAnh} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/536/354" }} />
-            <div className="card-body">
+        <div className="" key={index}>
+          <div className="d-flex">
+            <img width={200} height={120} className="w-50" src={phim.hinhAnh} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/536/354" }} />
+            <div className="card-body w-50">
               <p>{phim.tenPhim}</p>
               <p>{phim.moTa}</p>
             </div>

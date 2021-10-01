@@ -1,18 +1,19 @@
 
   
 import axios from "axios";
-import { TOKEN_CYBERSOFT } from "../../util/settings";
+import { http, TOKEN_CYBERSOFT } from "../../util/settings";
 
 //closure function : connect()()
 export const layDanhSachPhimAction = (maNhom) => {
   return (dispatch2) => {
-    let promise = axios({
-      url: `http://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=${maNhom}`,
-      method: "GET",
-      headers: {
-        TokenCybersoft: TOKEN_CYBERSOFT,
-      },
-    });
+    let promise = http.get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${maNhom}`)
+    // let promise = axios({
+    //   url: `http://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=${maNhom}`,
+    //   method: "GET",
+    //   headers: {
+    //     TokenCybersoft: TOKEN_CYBERSOFT,
+    //   },
+    // });
     promise.then((result) => {
       console.log("result : ", result.data);
       //Sau khi call api thành công lấy dữ liệu api set vào state mangPhim

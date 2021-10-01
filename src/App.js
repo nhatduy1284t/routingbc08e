@@ -22,9 +22,13 @@ import AntDemo from "./pages/AntDemo/AntDemo";
 import { AdminTemplate } from "./templates/AdminTemplate";
 //Thư viện giúp chuyển hướng trang
 import { createBrowserHistory } from 'history'
+import ApiMiddleWare_mobile from "./pages/AxiosDemo/ApiMiddleWare_mobile";
+import Films from "./pages/Films/Films";
+import AddFilms from "./pages/AddFilms/AddFilms";
 export const history = createBrowserHistory();
 
 function App() {
+  
   return (
     <Router history={history}>
       <Switch>
@@ -38,14 +42,17 @@ function App() {
         <HomeTemplate path="/reduxhook" component={ReduxHookDemo} />
         <HomeTemplate path="/ajaxrcc" component={AxiosDemo} />
         <HomeTemplate path="/ajaxrfc" component={AxiosDemoRFC} />
-        <HomeTemplate path="/apimiddleware" component={ApiMiddleWare} />
-        <HomeTemplate path="/apimiddleware" component={ApiMiddleWare} />
+        
+        <HomeTemplate path="/apimiddleware" component={ApiMiddleWare} mobileComponent={ApiMiddleWare_mobile} />
         <HomeTemplate path="/detail/:id" component={Detail} />
         <HomeTemplate path="/profile" component={Profile} />
         <HomeTemplate path="/hoc" component={HOC} />
-        <AdminTemplate path="/antd" component={AntDemo} />
+        <AdminTemplate path="/admin/antd" component={AntDemo} />
+        <AdminTemplate path="/admin/films" component={Films} />
+        <AdminTemplate path="/admin/addfilms" component={AddFilms} />
 
         <HomeTemplate path="/" component={Home} />
+        
       </Switch>
     </Router>
   );
